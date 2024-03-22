@@ -17,17 +17,17 @@ namespace Server
 
         public void ViewData()
         {
-            // Логика просмотра данных из базы данных
+            List<Record> records = dbManager.GetRecords(tableName);
         }
 
         public void AddRecord(string tableName, Record record)
         {
-            // Логика добавления записи в базу данных
+            dbManager.AddRecord(tableName, record);
         }
 
         public void UpdateRecord(string tableName, Record record)
         {
-            // Логика обновления записи в базе данных
+            dbManager.UpdateRecord(tableName, record);
         }
     }
 }

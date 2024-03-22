@@ -24,10 +24,8 @@ namespace Server
             {
                 string query = $"INSERT INTO {tableName} VALUES (@Param1, @Param2, @Param3, ...)";
                 SqlCommand command = new SqlCommand(query, connection);
-                // Присваиваем параметрам значения из объекта Record
                 command.Parameters.AddWithValue("@Param1", record.Field1);
                 command.Parameters.AddWithValue("@Param2", record.Field2);
-                // Добавляем остальные параметры
 
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -40,10 +38,8 @@ namespace Server
             {
                 string query = $"UPDATE {tableName} SET Field1 = @Param1, Field2 = @Param2, ... WHERE ID = @RecordID";
                 SqlCommand command = new SqlCommand(query, connection);
-                // Присваиваем параметрам значения из объекта Record
                 command.Parameters.AddWithValue("@Param1", record.Field1);
                 command.Parameters.AddWithValue("@Param2", record.Field2);
-                // Добавляем остальные параметры
                 command.Parameters.AddWithValue("@RecordID", record.ID);
 
                 connection.Open();
