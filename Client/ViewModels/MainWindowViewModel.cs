@@ -1,38 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using WpfMvvmPhonebook_P1415.Infrastructure;
+﻿using Supplier.Infrastructure;
 using System.ComponentModel;
+using System.Net.Sockets;
+using System.Windows.Input;
 
-namespace Client.ViewModels
+namespace Supplier.ViewModels;
+
+public class MainWindowViewModel : INotifyPropertyChanged
 {
-    public class MainWindowViewModel : INotifyPropertyChanged
-    {
-        TcpClient _tcpClient;
-        NetworkStream _stream;
+    TcpClient _tcpClient;
+    NetworkStream _stream;
 
-        Timer _timer;
-        private ICommand? sendButton;
+    Timer _timer;
+    private ICommand? sendButton;
 
-        public event PropertyChangedEventHandler? PropertyChanged;
+    public event PropertyChangedEventHandler? PropertyChanged;
 
-        public ICommand? SendButton => sendButton ??= new RelayCommand(
-            param =>
-            {
-
-               
-
-            });
-        public MainWindowViewModel() 
+    public ICommand? SendButton => sendButton ??= new RelayCommand(
+        param =>
         {
-            
-            //_tcpClient = tcpClient;
-            _stream = _tcpClient.GetStream();
-        }
+
+
+
+        });
+    public MainWindowViewModel()
+    {
+
+        //_tcpClient = tcpClient;
+        _stream = _tcpClient.GetStream();
     }
 }

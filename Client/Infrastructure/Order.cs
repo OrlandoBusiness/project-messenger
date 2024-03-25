@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Client.Infrastructure
-{
-    internal class Order
-    {
+namespace Supplier.Infrastructure;
 
-    }
+public class Order
+{
+
 }

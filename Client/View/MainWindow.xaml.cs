@@ -1,12 +1,11 @@
 ﻿using System.Windows;
 
-namespace Client
+namespace Supplier.View;
+
+public partial class MainWindow : Window
 {
-    public partial class MainWindow : Window
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
