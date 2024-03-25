@@ -41,7 +41,7 @@ CREATE TABLE Storage
 	[MaxCapacity] int CHECK(MaxCapacity > 0)
 )
 
-CREATE TABLE Supplies
+CREATE TABLE Supplie
 (
 	[Id] int IDENTITY PRIMARY KEY,
 	[ProductId] int FOREIGN KEY REFERENCES Product(Id) NOT NULL,
@@ -61,4 +61,12 @@ CREATE TABLE StorageProduct
 	[StorageId] int FOREIGN KEY REFERENCES Storage(Id) NOT NULL,
 	[ProductId] int FOREIGN KEY REFERENCES Product(Id) NOT NULL,
 	[CountOfProduct] int CHECK(CountOfProduct > 0)
+)
+
+CREATE TABLE [Order]
+(
+	[Id] int IDENTITY PRIMARY KEY,
+	[ProductId] int FOREIGN KEY REFERENCES Product(Id) NOT NULL,
+	[Count] int CHECK([Count] > 0) NOT NULL,
+	[IsActive] bit DEFAULT 1
 )
