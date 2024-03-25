@@ -11,16 +11,14 @@
         Background="DimGray">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*" MinHeight="200"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="1*" MinHeight="100"/>
+            <RowDefinition Height="2*" MinHeight="100"/>
             <RowDefinition Height="0.4*"/>
         </Grid.RowDefinitions>
         
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -30,29 +28,16 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Row="0" Content="Product:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></Label>
-            <Label Grid.Row="1" Content="Count:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></Label>
-            <Label Grid.Row="2" Content="Storage:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></Label>
-            <Label Grid.Row="3" Content="Arrived Date:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></Label>
+            <Label Grid.Row="0" Content="Count:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></Label>
+            <Label Grid.Row="1" Content="Arrived Date:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></Label>
 
-            <Grid Grid.Column="1" Margin="20">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="0.4*"/>
-                </Grid.ColumnDefinitions>
-                
-                <ComboBox Grid.Column="0" FontSize="20" MaxHeight="40"/>
-                <Label Grid.Column="1" Background="LightGray" FontSize="20" HorizontalAlignment="Stretch"/>
-            </Grid>
-
-            <ComboBox Grid.Column="1" Grid.Row="2" Margin="20"/>
-            <xctk:IntegerUpDown Grid.Column="1" Grid.Row="1" Margin="20" Minimum="0" Value="0"/>
-            <DatePicker Grid.Column="1" Grid.Row="3" FontSize="30" VerticalAlignment="Center" Margin="20, 0, 20, 0"/>
+            <xctk:IntegerUpDown x:Name="SupplieCount" Grid.Column="1" Grid.Row="0" Margin="20" Minimum="0" Value="0"/>
+            <DatePicker x:Name="ArrivedDate" Grid.Column="1" Grid.Row="3" FontSize="30" VerticalAlignment="Center" Margin="20, 0, 20, 0"/>
         </Grid>
 
         <GridSplitter Grid.Row="1" Height="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="LightGray"/>
 
-        <ListBox x:Name="ProductListBox" Grid.Row="2" Margin="10"/>
+        <ListBox x:Name="OrderListBox" Grid.Row="2" Margin="10" FontSize="16" ItemsSource="{Binding Orders}" SelectedItem="{Binding SelectedOrder}"/>
 
         <Button Grid.Row="3" Margin="10" Content="Send" Command="{Binding SendButton}" FontSize="24"/>
     </Grid>

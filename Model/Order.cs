@@ -12,4 +12,6 @@ public class Order
     public int Count { get; set; }
 
     public bool IsActive { get; set; } = true;
+
+    public override string ToString() => $"{Product.Name}: {Count}";
 }
