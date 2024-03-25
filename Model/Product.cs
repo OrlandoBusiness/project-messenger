@@ -7,12 +7,14 @@ public class Product
     [Key]
     public int Id { get; set; }
 
-    [MaxLength(255)]
+    [MaxLength(100)]
     public string Name { get; set; } = null!;
 
-    public DateTime ExpirationDate { get; set; }
+    public virtual Measure Measure { get; set; } = null!;
 
-    public int Count { get; set; }
+    public decimal? Price { get; set; }
 
-    public decimal Cost { get; set; }
+    public int? LifeInDays { get; set; }
+
+    public virtual ICollection<Supplier> Suppliers { get; set; } = new List<Supplier>();
 }

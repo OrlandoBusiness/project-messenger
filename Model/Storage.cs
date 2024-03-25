@@ -2,16 +2,16 @@
 
 namespace Model;
 
-public class Suppliers
+public class Storage
 {
     [Key]
     public int Id { get; set; }
 
-    [MaxLength(255)]
+    [MaxLength(100)]
     public string Name { get; set; } = null!;
 
-    [MaxLength(255)]
-    public string Type { get; set; } = null!;
+    [MaxLength(100)]
+    public string Password { get; set; } = null!;
 
-    public int? EmployeeCount { get; set; }
+    public int? MaxCapacity { get; set; }
 }
