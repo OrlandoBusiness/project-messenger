@@ -10,5 +10,8 @@ public class Storage
     [MaxLength(100)]
     public string Name { get; set; } = null!;
 
+    [MaxLength(100)]
+    public string Password { get; set; } = null!;
+
     public int? MaxCapacity { get; set; }
 }
