@@ -23,16 +23,17 @@
 
         <Grid Grid.Column="0" Margin="20">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="57*"/>
+                <ColumnDefinition Width="18*"/>
+                <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
 
-            <ComboBox Grid.Column="0" FontSize="20"/>
-            <Label Grid.Column="1" Background="LightGray" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <ComboBox x:Name="ProductNames" Grid.Column="0" FontSize="20" SelectionChanged="ProductNames_SelectionChanged"/>
+            <Label x:Name="MeasureLabel" Background="LightGray" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3" Margin="114,0,0,0" Content=""/>
         </Grid>
 
-        <xctk:IntegerUpDown Grid.Column="1" Margin="20"/>
-        <Button Grid.Column="2" Margin="20" Content="Send" FontSize="20"/>
+        <xctk:IntegerUpDown x:Name="IntegerCount" Grid.Column="1" Margin="20"/>
+        <Button x:Name="SendButton" Grid.Column="2" Margin="20" Content="Send" FontSize="20" Click="Button_Click" IsEnabled="False"/>
 
         <GridSplitter Grid.ColumnSpan="3" Height="3" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
 
@@ -52,9 +53,9 @@
 
             <Label Content="Active" Margin="10, 0, 0, 0" FontSize="16"/>
             <Label Content="Picked" Margin="10, 0, 0, 0" FontSize="16" Grid.Column="2"/>
-           
-            <ListBox Grid.Column="0" Grid.Row="1" Margin="10"/>
-            <ListBox Grid.Column="2" Grid.Row="1" Margin="10"/>
+
+            <ListBox x:Name="ActiveListBox" Grid.Column="0" Grid.Row="1" Margin="10"/>
+            <ListBox x:Name="PickedListBox" Grid.Column="2" Grid.Row="1" Margin="10"/>
         </Grid>
     </Grid>
 </Window>
