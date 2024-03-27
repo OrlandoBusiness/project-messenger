@@ -18,7 +18,7 @@
 	
 <ItemGroup>
 		<ProjectReference Include="..\Model\Model.csproj" />
-	</ItemGroup>
+</ItemGroup>
 	
 <ItemGroup>
   <None Update="appsettings.json">
