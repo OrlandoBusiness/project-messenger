@@ -11,7 +11,7 @@ public class Measure
     [MaxLength(100)]
     public string Name { get; set; } = null!;
 
-    public static int Size = sizeof(int) + 100;
+    public static int Size => sizeof(int) + 100;
 
     public static Measure GetMeasure(byte[] array)
     {

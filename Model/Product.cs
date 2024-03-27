@@ -19,7 +19,7 @@ public class Product
 
     public virtual ICollection<Supplier> Suppliers { get; set; } = new List<Supplier>();
 
-    public static int Size = sizeof(int) + 100 + Measure.Size + sizeof(decimal) + sizeof(int);
+    public static int Size => sizeof(int) + 100 + Measure.Size + sizeof(double) + sizeof(int);
 
     public static Product GetProduct(byte[] array)
     {
