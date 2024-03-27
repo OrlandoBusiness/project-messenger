@@ -15,6 +15,8 @@ public class Order
 
     public bool IsActive { get; set; } = true;
 
+    public string Show => $"Id: {Id} {Product.Name} {Count}";
+
     public static int Size => sizeof(int) + Product.Size + sizeof(int) + sizeof(bool);
 
     public static Order GetOrder(byte[] array)

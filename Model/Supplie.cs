@@ -21,6 +21,8 @@ public class Supplie
 
     public DateTime ArrivalDate { get; set; }
 
+    public string Show => $"Id: {Id} {Product.Name} {Supplier.Name} {Count}";
+
     public static int Size => sizeof(int) + Product.Size + Supplier.Size + Storage.Size + sizeof(int) + sizeof(double) + Extentions.DateSize + Extentions.DateSize;
 
     public static Supplie GetSupplie(byte[] array)
