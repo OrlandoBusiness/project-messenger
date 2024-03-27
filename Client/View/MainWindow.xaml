@@ -1,0 +1,44 @@
+﻿<Window x:Class="Supplier.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Supplier"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="470"
+        MinHeight="500" MinWidth="470"
+        Background="DimGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="2*" MinHeight="100"/>
+            <RowDefinition Height="0.4*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Content="Count:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></Label>
+            <Label Grid.Row="1" Content="Arrived Date:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></Label>
+
+            <xctk:IntegerUpDown x:Name="SupplieCount" Grid.Column="1" Grid.Row="0" Margin="20" Minimum="0" Value="0"/>
+            <DatePicker x:Name="ArrivedDate" Grid.Column="1" Grid.Row="3" FontSize="30" VerticalAlignment="Center" Margin="20, 0, 20, 0"/>
+        </Grid>
+
+        <GridSplitter Grid.Row="1" Height="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="LightGray"/>
+
+        <ListBox x:Name="OrderListBox" Grid.Row="2" Margin="10" FontSize="16" ItemsSource="{Binding Orders}" SelectedItem="{Binding SelectedOrder}"/>
+
+        <Button Grid.Row="3" Margin="10" Content="Send" Command="{Binding SendButton}" FontSize="24"/>
+    </Grid>
+</Window>

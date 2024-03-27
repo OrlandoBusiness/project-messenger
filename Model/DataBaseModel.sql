@@ -67,6 +67,7 @@ CREATE TABLE [Order]
 (
 	[Id] int IDENTITY PRIMARY KEY,
 	[ProductId] int FOREIGN KEY REFERENCES Product(Id) NOT NULL,
+	[StorageId] int FOREIGN KEY REFERENCES Storage(Id) NOT NULL,
 	[Count] int CHECK([Count] > 0) NOT NULL,
 	[IsActive] bit DEFAULT 1
 )
